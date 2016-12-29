@@ -124,4 +124,17 @@ typedef struct s_library_state {
   t_character message[SPEC_CHARACTER_MAX];
   unsigned char unmount;
 } t_lbstat;
+
+/*
+Ne      Info-Bulle:
+ko:   1234567890123456
+--,  ,----------------,
+  | 1|                |
+  | 2|                |
+  | 3|                |
+  | 4|                |
+  | 5|                |
+--'  '----------------'
+*/
+
 #endif
