@@ -130,6 +130,5 @@ pub struct LibraryState {
     pub position: Position,
     pub message: [Character; SPEC_CHARACTER_MAX],
     pub unmount: libc::c_uchar,
+    pub lock: libc::c_uchar,
 }
-
-
