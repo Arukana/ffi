@@ -123,6 +123,7 @@ typedef struct s_library_state {
   t_position position;
   t_character message[SPEC_CHARACTER_MAX];
   unsigned char unmount;
+  unsigned char look;
 } t_lbstat;
 
 /*
