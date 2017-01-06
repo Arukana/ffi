@@ -31,7 +31,7 @@ typedef enum e_attribute {
     Blink = 0x10,
     Reverse = 0x20,
     Hidden = 0x40,
-} e_attribute;
+} t_attribute;
 
 /// Neko Default Placements into the display screen
 typedef enum e_cardinal {
@@ -44,13 +44,13 @@ typedef enum e_cardinal {
     LowerLeft,
     LowerMiddle,
     LowerRight,
-} e_cardinal;
+} t_cardinal;
 
 /// Neko's Postures
 typedef enum e_sheet {
     None_Sheet = 95,
     Bust = 98,
-} e_sheet;
+} t_sheet;
 
 /// Neko's Body Parts and Accessories
 typedef enum e_part {
@@ -79,7 +79,7 @@ typedef enum e_part {
 	QuestionMark = 113,
 	QuestionMarks = 81,
 	WoolBall = 119,
-} e_part;
+} t_part;
 
 /// Neko's Emotions
 typedef enum e_emotion {
@@ -92,7 +92,7 @@ typedef enum e_emotion {
 	Shocked = 111,
 	Sleepy = 115,
 	Speechless = 101,
-} e_emotion;
+} t_emotion;
 
 /// Neko Placement Selection
 typedef struct s_position {
@@ -123,7 +123,7 @@ typedef struct s_library_state {
 	t_position position;
 	t_character message[SPEC_CHARACTER_MAX];
 	unsigned char unmount;
-	unsigned char look;
+	unsigned char lock;
 } t_lbstat;
 
 #endif
