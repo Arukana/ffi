@@ -89,10 +89,20 @@ typedef enum e_emotion {
 	Love = 108,
 	Malicious = 109,
 	Misunderstanding = 105,
+  Normal = 110,
+  Playing = 112,
 	Shocked = 111,
 	Sleepy = 115,
 	Speechless = 101,
+  Surprised = 117,
 } t_emotion;
+
+typedef enum e_relative {
+  Top = 0,
+  Bottom = 1,
+  Right = 2,
+  Left = 3,
+} t_relative;
 
 /// Neko Placement Selection
 typedef struct s_position {
@@ -117,11 +127,20 @@ typedef struct s_character { /// Style Attributes
 	unsigned int glyph;
 } t_character;
 
-typedef struct s_library_state {
-	unsigned char sheet;
-	t_tuple emotion[SPEC_MAX_DRAW][SPEC_MAX_XY];
-	t_position position;
+typedef struct s_personnage {
+  unsigned char sheet;
+  t_tuple emotion[SPEC_MAX_DRAW][SPEC_MAX_XY];
+  t_position position;
+} t_personnage;
+
+typedef struct s_say {
+  unsigned char cardinal;
 	t_character message[SPEC_CHARACTER_MAX];
+} t_say;
+
+typedef struct s_library_state {
+  t_personnage neko;
+  t_say infobulle;
 	unsigned char unmount;
 	unsigned char lock;
 } t_lbstat;
