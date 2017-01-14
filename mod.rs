@@ -105,9 +105,20 @@ pub enum Emotion {
     Love = b'l',
     Malicious = b'm',
     Misunderstanding = b'i',
+    Normal = b'n',  
+    Playing = b'p',
     Shocked = b'o',
     Sleepy = b's',
     Speechless = b'e',
+    Surprised = b'u',
+}
+
+#[repr(u8)]
+pub enum Relative {
+    Top = 0,
+    Bottom = 1,
+    Right = 2,
+    Left = 3,
 }
 
 #[repr(C)]
@@ -124,11 +135,22 @@ pub struct Character {
 }
 
 #[repr(C)]
-pub struct LibraryState {
+pub struct Personnage {
     pub sheet: Sheet,
     pub emotion: [[Tuple; SPEC_MAX_XY]; SPEC_MAX_DRAW],
     pub position: Position,
+}
+
+#[repr(C)]
+pub struct Say {
+    pub cardinal: Relative,
     pub message: [Character; SPEC_CHARACTER_MAX],
-    pub unmount: libc::c_uchar,
-    pub lock: libc::c_uchar,
+}
+
+#[repr(C)]
+pub struct LibraryState {
+    pub neko: Personnage,
+    pub infobulle: Say,
+    pub unmount: libc::u_char,
+    pub lock: libc::u_char,
 }
