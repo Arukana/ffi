@@ -122,7 +122,7 @@ typedef struct s_character {
 	unsigned char foreground[3];
 	/// Background Color
 	unsigned char background[3];
-    /// Style Attributes
+	/// Style Attributes
 	t_attribute attribute;
 	/// Glyph (as unicode character)
 	unsigned int glyph;
