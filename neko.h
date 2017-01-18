@@ -5,9 +5,8 @@
 #define SPEC_MAX_DRAW 16
 #define SPEC_MAX_X 10
 #define SPEC_MAX_Y 5
-#define SPEC_MAX_XY SPEC_MAX_X *SPEC_MAX_Y
-#define SPEC_MAX_PRE_XY SPEC_MAX_XY - 1
-#define SPEC_CHARACTER_MAX SPEC_MAX_Y * 16
+#define SPEC_MAX_XY SPEC_MAX_X*SPEC_MAX_Y
+#define SPEC_CHARACTER_MAX 1024
 
 /// Character Color Attributes
 #define BLACK [ 0, 0, 0 ]
@@ -123,7 +122,7 @@ typedef struct s_character {
 	/// Background Color
 	unsigned char background[3];
 	/// Style Attributes
-	t_attribute attribute;
+	unsigned char attribute;
 	/// Glyph (as unicode character)
 	unsigned int glyph;
 } t_character;
