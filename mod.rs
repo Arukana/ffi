@@ -6,11 +6,10 @@ use ::libc;
 pub const SPEC_MAX_DRAW: usize = 16;
 
 pub const SPEC_MAX_X: usize = 10;
-pub const SPEC_MAX_Y: usize = 5;
+pub const SPEC_MAX_Y: usize = 7;
 pub const SPEC_MAX_XY: usize = SPEC_MAX_X * SPEC_MAX_Y;
-pub const SPEC_MAX_PRE_XY: usize = SPEC_MAX_XY - 1;
 
-pub const SPEC_CHARACTER_MAX: usize = SPEC_MAX_Y * 16;
+pub const SPEC_CHARACTER_MAX: usize = 1024;
 
 pub const BLACK: [libc::c_uchar; 3] = [0, 0, 0];
 pub const RED: [libc::c_uchar; 3] = [255, 0, 0];
@@ -135,22 +134,22 @@ pub struct Character {
 }
 
 #[repr(C)]
-pub struct Personnage {
+pub struct Persona {
     pub sheet: Sheet,
     pub emotion: [[Tuple; SPEC_MAX_XY]; SPEC_MAX_DRAW],
     pub position: Position,
 }
 
 #[repr(C)]
-pub struct Say {
+pub struct Tooltip {
     pub cardinal: Relative,
     pub message: [Character; SPEC_CHARACTER_MAX],
 }
 
 #[repr(C)]
 pub struct LibraryState {
-    pub neko: Personnage,
-    pub infobulle: Say,
-    pub unmount: libc::u_char,
-    pub lock: libc::u_char,
+    pub persona: Persona,
+    pub tooltip: Tooltip,
+    pub unmount: libc::c_uchar,
+    pub lock: libc::c_uchar,
 }
