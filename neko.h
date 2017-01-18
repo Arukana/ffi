@@ -135,7 +135,7 @@ typedef struct s_persona {
 } t_persona;
 
 typedef struct s_tooltip {
-	t_cardinal cardinal;
+	t_relative relative;
 	t_character message[SPEC_CHARACTER_MAX];
 } t_tooltip;
 
