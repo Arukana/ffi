@@ -10,7 +10,7 @@ os:
 
 script:
   - cargo new libmiew --lib
-  - ln -f mod.rs lddibmiew/src/ffi.rs
+  - ln -n mod.rs libmiew/src/ffi.rs
   - cd libmiew
   - echo "libc = \"0.2\"" >> Cargo.toml
   - echo "extern crate libc; mod ffi;" > src/lib.rs
