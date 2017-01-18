@@ -127,6 +127,13 @@ typedef struct s_character {
 	unsigned int glyph;
 } t_character;
 
+typedef struct s_winszed {
+    unsigned short ws_row;
+    unsigned short ws_col;
+    unsigned short ws_xpixel;
+    unsigned short ws_ypixel;
+} t_winszed;
+
 typedef struct s_persona {
 	t_sheet sheet;
 	t_tuple expression[SPEC_MAX_DRAW][SPEC_MAX_XY];
