@@ -140,8 +140,8 @@ typedef struct s_tooltip {
 } t_tooltip;
 
 typedef struct s_library_state {
-	t_persona neko;
-	t_tooltip message;
+	t_persona persona;
+	t_tooltip tooltip;
 	unsigned char unmount;
 	unsigned char lock;
 } t_lbstat;
