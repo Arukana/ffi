@@ -121,16 +121,27 @@ pub enum Relative {
 }
 
 #[repr(C)]
-#[derive(Clone, Copy, Debug)]
 pub struct Character {
     /// Attribute.
-    attribute: libc::c_uchar,
+    pub attribute: libc::c_uchar,
     /// Text color.
-    foreground: [libc::c_uchar; 3],
+    pub foreground: [libc::c_uchar; 3],
     /// Background color.
-    background: [libc::c_uchar; 3],
+    pub background: [libc::c_uchar; 3],
     /// Glyph.
-    glyph: libc::c_uint,
+    pub glyph: libc::c_uint,
+}
+
+#[repr(C)]
+pub struct Winszed {
+    /// Rows, in characters.
+    pub ws_row: libc::c_ushort,
+    /// Columns, in characters.
+    pub ws_col: libc::c_ushort,
+    /// Horizontal size, pixels.
+    pub ws_xpixel: libc::c_ushort,
+    /// Vertical size, pixels.
+    pub ws_ypixel: libc::c_ushort, 
 }
 
 #[repr(C)]
