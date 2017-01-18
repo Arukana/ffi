@@ -23,33 +23,33 @@
 
 /// Characters Style Attributes
 typedef enum e_attribute {
-    None_Attr = 0x00,
-    Bold = 0x01,
-    Dim = 0x02,
-    Italic = 0x04,
-    Underline = 0x08,
-    Blink = 0x10,
-    Reverse = 0x20,
-    Hidden = 0x40,
+	None_Attr = 0x00,
+	Bold = 0x01,
+	Dim = 0x02,
+	Italic = 0x04,
+	Underline = 0x08,
+	Blink = 0x10,
+	Reverse = 0x20,
+	Hidden = 0x40,
 } t_attribute;
 
 /// Neko Default Placements into the display screen
 typedef enum e_cardinal {
-    UpperLeft,
-    UpperMiddle,
-    UpperRight,
-    MiddleLeft,
-    MiddleCentral,
-    MiddleRight,
-    LowerLeft,
-    LowerMiddle,
-    LowerRight,
+	UpperLeft,
+	UpperMiddle,
+	UpperRight,
+	MiddleLeft,
+	MiddleCentral,
+	MiddleRight,
+	LowerLeft,
+	LowerMiddle,
+	LowerRight,
 } t_cardinal;
 
 /// Neko's Postures
 typedef enum e_sheet {
-    None_Sheet = 95,
-    Bust = 98,
+	None_Sheet = 95,
+	Bust = 98,
 } t_sheet;
 
 /// Neko's Body Parts and Accessories
@@ -89,58 +89,59 @@ typedef enum e_emotion {
 	Love = 108,
 	Malicious = 109,
 	Misunderstanding = 105,
-  Normal = 110,
-  Playing = 112,
+	Normal = 110,
+	Playing = 112,
 	Shocked = 111,
 	Sleepy = 115,
 	Speechless = 101,
-  Surprised = 117,
+	Surprised = 117,
 } t_emotion;
 
 typedef enum e_relative {
-  Top = 0,
-  Bottom = 1,
-  Right = 2,
-  Left = 3,
+	Top = 0,
+	Bottom = 1,
+	Right = 2,
+	Left = 3,
 } t_relative;
 
 /// Neko Placement Selection
 typedef struct s_position {
-	unsigned char cardinal;
+	t_cardinal cardinal;
 	unsigned short cartesian[2];
 } t_position;
 
 /// Neko's Texels Definition
 typedef struct s_tuple {
-	unsigned char part;
-	unsigned char emotion;
+	t_part part;
+	t_emotion emotion;
 } t_tuple;
 
 /// Display screen's Characters
-typedef struct s_character { /// Style Attributes
-	unsigned char attribute;
+typedef struct s_character {
 	/// Text Color
 	unsigned char foreground[3];
 	/// Background Color
 	unsigned char background[3];
+    /// Style Attributes
+	t_attribute attribute;
 	/// Glyph (as unicode character)
 	unsigned int glyph;
 } t_character;
 
-typedef struct s_personnage {
-  unsigned char sheet;
-  t_tuple emotion[SPEC_MAX_DRAW][SPEC_MAX_XY];
-  t_position position;
-} t_personnage;
+typedef struct s_persona {
+	t_sheet sheet;
+	t_tuple expression[SPEC_MAX_DRAW][SPEC_MAX_XY];
+	t_position position;
+} t_persona;
 
-typedef struct s_say {
-  unsigned char cardinal;
+typedef struct s_tooltip {
+	t_cardinal cardinal;
 	t_character message[SPEC_CHARACTER_MAX];
-} t_say;
+} t_tooltip;
 
 typedef struct s_library_state {
-  t_personnage neko;
-  t_say infobulle;
+	t_persona neko;
+	t_tooltip message;
 	unsigned char unmount;
 	unsigned char lock;
 } t_lbstat;
