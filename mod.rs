@@ -56,8 +56,10 @@ pub struct Position {
 
 #[repr(u32)]
 pub enum Sheet {
-    None = b'_',
-    Bust = b'b',
+    /// Symbol '_'.
+    None = 0x5f,
+    /// Symbol 'b'.
+    Bust = 0x62,
 }
 
 #[repr(C)]
@@ -68,47 +70,79 @@ pub struct Tuple {
 
 #[repr(u32)]
 pub enum Part {
-    None = b'_',
-    ArmLeft = b'a',
-    ArmRight = b'A',
-    Boobs = b'b',
-    Clavicle = b'c',
-    EarLeft = b'e',
-    EarRight = b'E',
-    EyeLeft = b'y',
-    EyeRight = b'Y',
-    HairTop = b'o',
-    HairLeft = b'r',
-    HairRight = b'R',
-    HandLeft = b'd',
-    HandRight = b'D',
-    Mouth = b'm',
-    Tail = b't',
-    Bell = b'l',
-    ExclamationMark = b'x',
-    ExclamationMarks = b'X',
-    Heart = b'h',
-    Hearts = b'H',
-    Lantern = b'n',
-    QuestionMark = b'q',
-    QuestionMarks = b'Q',
-    WoolBall = b'w',
+    /// Symbol '_'.
+    None = 0x5f,
+    /// Symbol 'a'.
+    ArmLeft = 0x61,
+    /// Symbol 'A'.
+    ArmRight = 0x41,
+    /// Symbol 'b'.
+    Boobs = 0x62,
+    /// Symbol 'c'.
+    Clavicle = 0x63,
+    /// Symbol 'e'.
+    EarLeft = 0x65,
+    /// Symbol 'E'.
+    EarRight = 0x45,
+    /// Symbol 'y'.
+    EyeLeft = 0x79,
+    /// Symbol 'Y'.
+    EyeRight = 0x59,
+    /// Symbol 'o'.
+    HairTop = 0x6f,
+    /// Symbol 'r'.
+    HairLeft = 0x72,
+    /// Symbol 'R'.
+    HairRight = 0x52,
+    /// Symbol 'd',
+    HandLeft = 0x64,
+    /// Symbol 'D',
+    HandRight = 0x44,
+    /// Symbol 'm',
+    Mouth = 0x6d,
+    /// Symbol 't'.
+    Tail = 0x74,
+    /// Symbol 'l'.
+    Bell = 0x6c,
+    /// Symbol 'x'.
+    ExclamationMark = 0x78,
+    /// Symbol 'X'.
+    ExclamationMarks = 0x58,
+    /// Symbol 'h'.
+    Heart = 0x68,
+    /// Symbol 'H'.
+    Hearts = 0x48,
+    /// Symbol 'n'.
+    Lantern = 0x6e,
+    /// Symbol 'q'.
+    QuestionMark = 0x71,
+    /// Symbol 'Q'.
+    QuestionMarks = 0x51,
+    /// Symbol 'w'.
+    WoolBall = 0x77,
 }
 
 #[repr(u32)]
+#[derive(Clone, Copy, Eq, PartialEq, Hash, Debug)]
 pub enum Emotion {
-    None = b'_',
-    Angry = b'a',
-    Happy = b'h',
-    Love = b'l',
-    Malicious = b'm',
-    Misunderstanding = b'i',
-    Normal = b'n',  
-    Playing = b'p',
-    Shocked = b'o',
-    Sleepy = b's',
-    Speechless = b'e',
-    Surprised = b'u',
+    /// Symbol '_'.
+    None = 0x5f,
+    /// Symbol 'a'.
+    Angry = 0x61,
+    /// Symbol 'h'.
+    Happy = 0x68,
+    /// Symbol 'l'.
+    Love = 0x6c,
+    /// Symbol 'm'.
+    Malicious = 0x6d,
+    /// Symbol 'i'.
+    Misunderstanding = 0x69,
+    /// Symbol 'o'.
+    Shocked = 0x6f,
+    /// Symbol 's'.
+    Sleepy = 0x73,
+    /// Symbol 'e'.
+    Speechless = 0x65,
 }
 
 #[repr(u32)]
