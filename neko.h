@@ -47,8 +47,74 @@ typedef enum e_cardinal {
 
 /// Neko's Postures
 typedef enum e_sheet {
+    /// Symbol '_'.
 	None_Sheet = 95,
-	Bust = 98,
+    /// Symbol 'A'.
+    BustAngry = 0x41,
+    /// Symbol 'H'.
+    BustHappy = 0x48,
+    /// Symbol 'L'.
+    BustLove = 0x4c,
+    /// Symbol 'M'.
+    BustMalicious = 0x4d,
+    /// Symbol 'm'.
+    BustMisunderstanding = 0x6d,
+    /// Symbol 'n'.
+    BustNormal = 0x6e,
+    /// Symbol 'P'.
+    BustPlaying = 0x50,
+    /// Symbol 'S'.
+    BustShocked = 0x53,
+    /// Symbol 's'.
+    BustSleepy = 0x73,
+    /// Symbol 'p'.
+    BustSpeechless = 0x70, 
+    /// Symbol 'U'.
+    BustSurprised = 0x55,
+    /// Symbol 'a'.
+    LyingAngry = 0x61,
+    /// Symbol 'h'.
+    LyingHappy = 0x68,
+    /// Symbol 'l'.
+    LyingLove = 0x6c,
+    /// Symbol 'I'.
+    LyingMalicious = 0x49,
+    /// Symbol 'i'.
+    LyingMisunderstanding = 0x69,
+    /// Symbol 'N'.
+    LyingNormal = 0x4e,
+    /// Symbol 'R'.
+    LyingPlaying = 0x52,
+    /// Symbol 'D'.
+    LyingShocked = 0x44,
+    /// Symbol 'E'.
+    LyingSleepy = 0x45,
+    /// Symbol 'C'.
+    LyingSpeechless = 0x43,
+    /// Symbol 'u'.
+    LyingSurprised = 0x75,
+    /// Symbol 'G'.
+    SeizaAngry = 0x47,
+    /// Symbol 'Y'.
+    SeizaHappy = 0x59,
+    /// Symbol 'V'.
+    SeizaLove = 0x56,
+    /// Symbol 'c'.
+    SeizaMalicious = 0x63,
+    /// Symbol 'e'.
+    SeizaMisunderstanding = 0x65,
+    /// Symbol 'o'.
+    SeizaNormal = 0x6f,
+    /// Symbol 'g'.
+    SeizaPlaying = 0x67,
+    /// Symbol 'K'.
+    SeizaShocked = 0x4b,
+    /// Symbol 'y'.
+    SeizaSleepy = 0x79,
+    /// Symbol 'Z'.
+    SeizaSpeechless = 0x5a,
+    /// Symbol 'd'.
+    SeizaSurprised = 0x64,
 } t_sheet;
 
 /// Neko's Body Parts and Accessories
